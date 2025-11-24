@@ -47,19 +47,16 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
 
-        boolean checker = false;
         if (arr1.length != arr2.length){
             return false;
         }
 
         for (int i = 0; i < arr1.length; i++){
-            if (arr1[i] == arr2[i]){
-                checker = true;
-            } else {
-                checker = false;
-            }
+            if (charAt(arr1, i) != charAt(arr2, i)){
+                return false;
+            } 
         }
-        return checker;
+        return true;
     }
 
     /** Returns the index within the given array of the first occurrence of the given character.
@@ -148,6 +145,10 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
+
+        if (endIndex > arr.length || beginIndex < 0 ){
+            return null;
+        }
 
         char[] originalChar = arr;
         int lengthOfNewArray = endIndex - beginIndex;
