@@ -65,7 +65,7 @@ public class ArrCharOps {
     public static int indexOf(char[] arr, char ch) {
 
         char character = ch;
-        int checker = 0;
+        int checker = -1;
         for (int i = 0; i < arr.length; i++){
             if (arr[i] == character){
                 checker = i;
