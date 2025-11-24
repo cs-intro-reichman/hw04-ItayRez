@@ -70,14 +70,12 @@ public class ArrCharOps {
             if (arr[i] == character){
                 checker = i;
                 break;
-            } else {
-                checker = -1;
+            }
+               
             }
         
+            return checker;
         }
-        return checker;
-
-    }
 
     /** Same as indexOf(char[], char), but starts the search in the given index.
      */
@@ -146,7 +144,7 @@ public class ArrCharOps {
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
 
-        if (endIndex > arr.length || beginIndex < 0 ){
+        if (beginIndex < 0 || endIndex > arr.length || endIndex < beginIndex){
             return null;
         }
 
@@ -154,7 +152,7 @@ public class ArrCharOps {
         int lengthOfNewArray = endIndex - beginIndex;
         char[] newArray = new char[endIndex - beginIndex];
 
-        for (int i = 0; i < lengthOfNewArray - 1; i++){
+        for (int i = 0; i < lengthOfNewArray; i++){
 
             newArray[i] = originalChar[beginIndex];
             beginIndex++;
